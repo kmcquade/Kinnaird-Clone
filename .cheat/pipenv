@@ -1,0 +1,5 @@
+# Spawn a shell into the virtualenv
+pipenv shell
+
+# Create requirements.txt from Pipenv file
+pipenv run pip freeze > requirements.txt

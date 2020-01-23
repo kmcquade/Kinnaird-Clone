@@ -1,0 +1,11 @@
+module "label" {
+  source       = "git::https://github.com/cloudposse/terraform-terraform-label.git?ref=0.4.0"
+  namespace    = var.namespace
+  stage        = var.stage
+  name         = var.name
+  attributes   = [compact(var.attributes)]
+  delimiter    = var.delimiter
+  convert_case = var.convert_case
+  tags         = var.default_tags
+  enabled      = "true"
+}

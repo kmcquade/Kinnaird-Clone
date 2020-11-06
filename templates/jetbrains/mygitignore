@@ -20,19 +20,48 @@ tmp
 __pycache__/
 *.py[cod]
 *$py.class
-env/
+
+# Misc
+!.gitkeep
+*.log
+_notes/*
+private/*
+tmp/*
+
+# Mac OS X
+.DS_Store
+
+#### By Technology/Language ####
+
+# Terraform
+**/.terraform/*
+*.plan
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars
+
+# NodeJS
+bower_components
+node_modules/*
+
+# Python
+.coverage.*
+.coverage
+*.egg-info/
+.pytest_cache/*
 build/
-develop-eggs/
 dist/
 downloads/
 eggs/
+env/*
 .eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
-venv/
+venv/*
 *.egg-info/
 .installed.cfg
 *.egg

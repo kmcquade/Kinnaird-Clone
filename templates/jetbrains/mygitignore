@@ -27,6 +27,7 @@ __pycache__/
 _notes/*
 private/*
 tmp/*
+site/*
 
 # Mac OS X
 .DS_Store

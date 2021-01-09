@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# git clones a repository into $HOME/Code/github.com/username/repository and then open it in Pycharm, all in one command
+# Example:
+"""
+git_clone_open_in_pycharm.py -u git@github.com:pyupio/pyup.git
+# This will create $HOME/Code/github.com/username/repository
+"""
 import os
 import subprocess
 import argparse
@@ -15,10 +21,7 @@ parser.add_argument(
     required=True,
     help="The GitHub repository, like git@github.com:username/repository.git"
 )
-# Example:
-"""
-git_clone_open_in_pycharm.py --url git@github.com:pyupio/pyup.git
-"""
+
 args = parser.parse_args()
 HOME = str(Path.home())
 GITHUB_DIRECTORY = os.path.join(HOME, "Code", "github.com")
@@ -28,9 +31,6 @@ if not os.path.isdir(GITHUB_DIRECTORY):
         os.makedirs(GITHUB_DIRECTORY)
     except OSError as e:
         parser.error('could not create directory {}'.format(e))
-
-# git_url_pattern = "((git@|http(s)?:\/\/)([\w\.@]+)(\/|:))([\w,\-,\_]+)\/([\w,\-,\_]+)(.git){0,1}((\/){0,1})"
-# assert re.match(url, git_url_pattern)
 
 # Get the username and repo_name
 u_repo_str = url.replace("git@github.com:", "")  # pyupio/pyup.git
